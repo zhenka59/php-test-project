@@ -31,7 +31,7 @@ Content-Type: application/json
 ```
 
 
-Авторизация пользователя
+Авторизация пользователя с присвоением токена
 ```
 POST http://localhost:8099/api/login
 Content-Type: application/json
@@ -43,16 +43,16 @@ Content-Type: application/json
 ```
 
 
-Создание поста
+Создание поста 
 ```
-POST http://localhost:8099/post/create
+POST http://localhost:8099/post/create?token=bE5fi8a5rEyrNzdh3tdBE5TkdH2QBN5r5K53T5RhZyay3sH9hEFtNz3QkR2kns3E
 Content-Type: application/json
 
 {
   "title": "Post Title",
-  "content": "Content"
+  "content": "Content Content Content"
 }
-
+```
 
 
 Обновление поста
@@ -69,35 +69,24 @@ Content-Type: application/json
 
 Удаление поста
 ```
-POST http://localhost:8099/post/edit
+POST http://localhost:8099/post/delete?id=1
 Content-Type: application/json
 
 {
-  "title": "Post Title update",
-  "content": "Content update"
+  "title": "Post",
+  "content": "Content"
 }
 ```
 
 
 Получение поста
 ```
-POST http://localhost:8099/post/edit?id=1
+POST http://localhost:8099/post/view?id=1
 Content-Type: application/json
 
 {
   "title": "Post Title",
   "content": "Content"
-}
-```
-
-
-```
-POST http://localhost:8099/post/create?token=bE5fi8a5rEyrNzdh3tdBE5TkdH2QBN5r5K53T5RhZyay3sH9hEFtNz3QkR2kns3E
-Content-Type: application/json
-
-{
-  "title": "Post Title",
-  "content": "Content Content Content"
 }
 ```
 
